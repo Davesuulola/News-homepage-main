@@ -1,0 +1,266 @@
+
+*, *::before, *::after{
+    box-sizing: border-box;
+  }
+body{
+    font-family: Inter;
+    background-color: hsl(36, 100%, 99%);   
+}
+
+header{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    
+   
+    margin-top: 2em;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+nav{
+    position: absolute;
+    text-align: left;
+    margin-top: 85px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: hsl(36, 100%, 99%);   
+  transform: scale(1, 0);
+  transform-origin: top;
+  border-bottom: 1px solid black;
+  transition: transform 400ms ease-in-out;
+  }
+  nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  nav li{
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+  }
+  nav a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out ;
+  }
+  nav a:hover{
+    color: hsl(5, 85%, 63%);
+    
+  }
+  .logo{
+    margin-left: 20px;
+  }
+  .nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+  }
+  
+  .nav-toggle:checked ~ nav a{
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+  }
+  
+  .nav-toggle{
+    display: none;
+  }
+  .nav-toggle-label{
+    top: 0;
+    left: 85%;
+    margin-left: 1em;
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    display: block;
+    background: black;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+  }
+  .nav-toggle-label span::before{
+    bottom: 8px;
+  }
+  .nav-toggle-label span::after{
+    top: 7px;
+  }
+  @media screen and (min-width:950px) {
+    
+    .foot{
+        display: flex;
+        flex-wrap: wrap;
+    }
+  }
+  @media screen and (min-width:850px) {
+    
+    .nav-toggle-label{
+      display: none;
+    }
+    header{
+      display: grid;
+      margin-top: 6px;
+      grid-template-columns: 1fr auto minmax(600px, 4fr) 1fr;
+    }
+    .logo{
+        margin-left: -5em;
+      grid-column: 2 / 2;
+    }
+    nav{
+      all: unset;
+      
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    nav a{
+    opacity: 1;
+    position: relative;
+    }
+   
+    nav ul{
+      display: flex;
+      justify-content: flex-end;
+      /* border: 1px solid red; */
+  
+  
+    }
+    nav li{
+      margin-left: 2em;
+      margin-bottom: 20px;
+    }
+    main{
+        display: grid;
+        grid-template-areas: 
+        "a a b"
+        "c d b"
+        ;
+        gap: 15px;
+    }
+    
+    .last{
+        margin-top: 0;
+    }
+    .second{
+        margin-top: -2em;
+        
+    }
+    .second h1{
+        font-size: 35px;
+    }
+    .three{
+        margin-top: -4em;
+        margin-bottom: 1em;
+        
+    }
+  }
+
+
+  /* normal mobile view */
+  main{
+    /* border: 1px solid red; */
+ 
+    margin: 30px;
+  }
+  .img{
+/* background-image: url(./assets/images/image-web-3-desktop.jpg);  
+background-size: contain;
+background-repeat: no-repeat; */
+height: 300px;
+grid-area: a;
+}
+.img img{
+    object-fit: cover;
+    height: 300px;
+    object-position: bottom;
+    width: 100%;
+}
+.second{
+    grid-area: c;
+}
+.second h1{
+font-weight: 800;
+font-size: 39px;
+}
+.three{
+    grid-area: d;
+    margin-top: -20px;
+}
+.three p{
+    color: #ccc;
+    font-size: 15px;
+    line-height: 25px;
+}
+.read{
+    width: 70%;
+    background-color: hsl(5, 85%, 63%);
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    height: 50px;
+}
+.read:hover{
+    background-color: hsl(240, 100%, 5%);
+}
+.last{
+    grid-area: b;
+    
+    background-color: hsl(240, 100%, 5%);
+    padding: 20px;
+}
+.card{
+    font-size: 15px;
+    color: white;
+    border-bottom: 1px solid #ccc;
+    margin: 10px;
+    padding: 5px;
+}
+.card h1{
+font-size: 20px;
+}
+.card h1:hover{
+    color:hsl(35, 77%, 62%)
+}
+.card p{
+    margin-top: -15px;
+}
+.foot{
+  padding: 30px;
+width: 100%;
+}
+.foots img{
+    height: 70%;
+    width: 30%;
+}
+.foots
+{
+    /* border: 1px solid red; */
+    padding: 15px; 
+    display: flex;
+    width: auto;
+}
+.foots h1{
+    color: #ccc;
+
+}
+.foots h2:hover{
+    color: hsl(5, 85%, 63%);
+}
+.class{
+    margin-left: 15px;
+}
